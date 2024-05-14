@@ -1,0 +1,16 @@
+{
+    "description": "HoneyBook AirBnB",
+    "author": "Nisim Naim",
+    "scripts": {
+        "pretest": "tsc -p tests/tsconfig.json",
+        "test": "playwright test -c tests-out",
+        "debug": "playwright test --ui"
+    },
+    "dependencies": {
+        "@playwright/test": "^1.44.0",
+        "playwright": "^1.44.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.11"
+    }
+}
