@@ -125,7 +125,7 @@ const changeBookingDates = async (page: Page, originalCheckInDate: Date, origina
     // await bookingDetailsElement.locator("input[id=\"checkIn-book_it\"]").click();
     const possibleToUpdateCheckInDate = await handleDates.tryToUpdateDate(availabilityCalendar, updatedCheckInDate);
 
-    let possibleToUpdateCheckOutDate: boolean;
+    let possibleToUpdateCheckOutDate: boolean = false;
     if (possibleToUpdateCheckInDate) {
         // await bookingDetailsElement.locator(`button[aria-label^="Change dates"]`).click();
         await bookingDetailsElement.locator("input[id=\"checkOut-book_it\"]").click();
