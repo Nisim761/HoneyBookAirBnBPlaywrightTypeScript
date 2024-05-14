@@ -1,7 +1,5 @@
 import { Page } from '@playwright/test';
-import convertDateToString from '../helpers/convertDateToString';
 import handleDates from '../helpers/handleDates';
-// import popUps from './popUps';
 
 const searchForAStay = async (page: Page, destination: string, 
     checkInDate: Date, checkOutDate: Date, 
