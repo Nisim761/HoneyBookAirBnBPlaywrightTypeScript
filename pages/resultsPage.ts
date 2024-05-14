@@ -19,16 +19,12 @@ const confirmSearchResults = async (page: Page, destination: string,
     const expectedCheckInMonth = convertDateToString.getShortMonthNameFromDate(checkInDate);
     const expectedcheckInDay = convertDateToString.getDayFromDate(checkInDate);
     const expectedCheckInDate = expectedCheckInMonth.concat(" ").concat(expectedcheckInDay);
-    console.log("expectedCheckInMonth = " + expectedCheckInMonth);
-    console.log("expectedcheckInDay = " + expectedcheckInDay);
     
     const searchResultsCheckInDate = await page.getByTestId("structured-search-input-field-split-dates-0").textContent();
     expect(searchResultsCheckInDate).toContain(expectedCheckInDate);
 
     const expectedCheckOutMonth = convertDateToString.getShortMonthNameFromDate(checkOutDate);
     const expectedcheckOutDay = convertDateToString.getDayFromDate(checkOutDate);
-    console.log("expectedCheckOutMonth = " + expectedCheckOutMonth);
-    console.log("expectedcheckOutDay = " + expectedcheckOutDay);
     const expectedCheckOutDate = expectedCheckOutMonth.concat(" ").concat(expectedcheckOutDay);
 
     const searchResultsCheckOutDate = await page.getByTestId("structured-search-input-field-split-dates-1").textContent();
