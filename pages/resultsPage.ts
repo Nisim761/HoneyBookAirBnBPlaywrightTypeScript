@@ -14,7 +14,7 @@ const confirmSearchResults = async (page: Page, destination: string,
     await page.getByTestId("little-search-icon").click();
 
     const searchResultsDestination = await page.locator("[id=\"bigsearch-query-location-input\"]").getAttribute("value");
-    expect(searchResultsDestination.toLocaleLowerCase()).toContain(destination.toLowerCase());
+    expect(searchResultsDestination!.toLocaleLowerCase()).toContain(destination.toLowerCase());
 
     const expectedCheckInMonth = convertDateToString.getShortMonthNameFromDate(checkInDate);
     const expectedcheckInDay = convertDateToString.getDayFromDate(checkInDate);
