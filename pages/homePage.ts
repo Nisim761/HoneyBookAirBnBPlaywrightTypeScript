@@ -57,7 +57,6 @@ const addGuestsOfSpecificType = async (page: Page, numOfGuests: number, guestTyp
     let buttonIdentifier = "stepper-guestTypePlaceHolder-increase-button";
     buttonIdentifier = buttonIdentifier.replace("guestTypePlaceHolder", guestType);
     for (let i = 1 ; i <= numOfGuests ; ++i) {
-        // await popUps.checkForPopUpInHomePageAndDismissIfExists(page);
         await reOpenAddGuestsSection(page, buttonIdentifier);
         await page.getByTestId(buttonIdentifier).click();
     }
